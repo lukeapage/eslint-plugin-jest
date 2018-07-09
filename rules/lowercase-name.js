@@ -1,6 +1,6 @@
 'use strict';
 
-const getDocsUrl = require('./util').getDocsUrl;
+const { getDocsUrl } = require('./util');
 
 const isItTestOrDescribeFunction = node => {
   return (
@@ -22,8 +22,8 @@ const isItDescription = node => {
 };
 
 const testDescription = node => {
-  const firstArgument = node.arguments[0];
-  const type = firstArgument.type;
+  const [firstArgument] = node.arguments;
+  const { type } = firstArgument;
 
   if (type === 'Literal') {
     return firstArgument.value;

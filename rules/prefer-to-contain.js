@@ -1,11 +1,13 @@
 'use strict';
 
-const getDocsUrl = require('./util').getDocsUrl;
-const expectCase = require('./util').expectCase;
-const expectResolveCase = require('./util').expectResolveCase;
-const expectRejectCase = require('./util').expectRejectCase;
-const method = require('./util').method;
-const argument = require('./util').argument;
+const {
+  getDocsUrl,
+  expectCase,
+  expectResolveCase,
+  expectRejectCase,
+  method,
+  argument,
+} = require('./util');
 
 const isEqualityCheck = node =>
   method(node) &&

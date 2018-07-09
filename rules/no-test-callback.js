@@ -1,7 +1,6 @@
 'use strict';
 
-const getDocsUrl = require('./util').getDocsUrl;
-const isTestCase = require('./util').isTestCase;
+const { getDocsUrl, isTestCase } = require('./util');
 
 module.exports = {
   meta: {
@@ -32,7 +31,7 @@ module.exports = {
           message: 'Illegal usage of test callback',
           fix(fixer) {
             const sourceCode = context.getSourceCode();
-            const body = callback.body;
+            const { body } = callback;
             const firstBodyToken = sourceCode.getFirstToken(body);
             const lastBodyToken = sourceCode.getLastToken(body);
             const tokenBeforeArgument = sourceCode.getTokenBefore(argument);
